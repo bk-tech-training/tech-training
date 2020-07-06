@@ -8,5 +8,6 @@
  - `ng add @angular/material`
  - `npm i firebase-tools -g`
  - `npm add @angular/fire`
+ - `npm i firebase`
  
 

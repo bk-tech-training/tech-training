@@ -10,25 +10,25 @@
 
     <div class="row">
       <div class="col-md-10">
-        <h4 class="card-title">Python cours</h4>
-        <div class="card-text">Beginners level</div>
+        <h4 class="card-title">{{ course.name }}</h4>
+        <div class="card-text">{{ course.level }}</div>
       </div>
     </div>
   </div>
   <div class="card-body">
     <a
-routerLink="/cours"
+routerLink="/course"
 routerLinkActive="active"
 >
     <img
       class="img-responsive ml-0"
       mat-card-image
-      src="../../assets/images/python.png"
+      [src]="course.image_url"
       alt="Python symbol"
     />
 
     </a>
-    <p class="card-text">The Python cours for beginners.</p>
+    <p class="card-text">{{ course.courseDescription }}</p>
     <button class="btn btn-primary">Start Now</button>
   </div>
 </div>

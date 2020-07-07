@@ -8,6 +8,7 @@ import { CoreModule } from './core/core.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
 import { SharedModule } from './shared/shared.module';
+import { CoursCardComponent } from './features/courses/cours-card/cours-card.component';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent],

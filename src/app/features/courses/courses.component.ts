@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Course } from './course.model';
+import { CoursesService } from 'src/app/core/services/courses.service';
 
 @Component({
   selector: 'bk-courses',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent implements OnInit {
+  courses: Course[];
 
-  constructor() { }
+  constructor(private coursesService: CoursesService) { }
 
   ngOnInit(): void {
+    this.courses = this.coursesService.getCourses();
+    console.log(this.courses);
+
   }
 
 }

@@ -1,40 +1,42 @@
 import { Injectable } from '@angular/core';
+import { Course } from 'src/app/features/courses/course.model';
 // need to be orgnize maybe in class course and lesson
-interface Question {
-  ques: string;
-  answers?: { [ans: string]: boolean }[];
-}
+// interface Question {
+//   ques: string;
+//   answers?: { [ans: string]: boolean }[];
+// }
 
-interface Lesson {
-  id: string;
-  name: string;
-  contant: { [cont: string]: Question };
-}
+// interface Lesson {
+//   id: string;
+//   name: string;
+//   contant: { [cont: string]: Question };
+// }
 
-interface Section {
-  name: string;
-  lessons: Lesson[];
-}
+// interface Section {
+//   name: string;
+//   lessons: Lesson[];
+// }
 
-interface Cours {
-  id: string;
-  name: string;
-  level: string;
-  image_url: string;
-  sectiones: Section[];
-}
+// export interface Cours {
+//   id: string;
+//   name: string;
+//   level: string;
+//   image_url: string;
+//   sectiones: Section[];
+// }
 
 @Injectable({
   providedIn: 'root',
 })
 export class CoursesService {
   // bring courses data from server
-  courses: Cours[] = [
+  courses: Course[] = [
     {
       id: 'PythonCourse',
       name: 'Python Course',
       level: 'Begginers',
-      image_url: 'url',
+      image_url: '../../assets/images/python.png',
+      courseDescription: 'The Python cours for beginners.',
       sectiones: [
         {
           name: 'Introduction',
@@ -53,7 +55,132 @@ export class CoursesService {
         },
       ],
     },
+    {
+      id: 'LinuxCourse',
+      name: 'Linux Course',
+      level: 'Begginers',
+      image_url: '../../assets/images/linux.jpg',
+      courseDescription: 'The Linux cours for beginners.',
+      sectiones: [
+        {
+          name: 'Introduction',
+          lessons: [
+            {
+              id: '2',
+              name: 'What is Linux',
+              contant: {
+                'Python is awesome': {
+                  ques: 'what is python?',
+                  answers: [{ 'Python is awesome': true }],
+                },
+              },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'PythonCourse',
+      name: 'Python Course',
+      level: 'Begginers',
+      image_url: '../../assets/images/python.png',
+      courseDescription: 'The Python cours for beginners.',
+      sectiones: [
+        {
+          name: 'Introduction',
+          lessons: [
+            {
+              id: '1',
+              name: 'What is Python',
+              contant: {
+                'Python is awesome': {
+                  ques: 'what is python?',
+                  answers: [{ 'Python is awesome': true }],
+                },
+              },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'LinuxCourse',
+      name: 'Linux Course',
+      level: 'Begginers',
+      image_url: '../../assets/images/linux.jpg',
+      courseDescription: 'The Linux cours for beginners.',
+      sectiones: [
+        {
+          name: 'Introduction',
+          lessons: [
+            {
+              id: '2',
+              name: 'What is Linux',
+              contant: {
+                'Python is awesome': {
+                  ques: 'what is python?',
+                  answers: [{ 'Python is awesome': true }],
+                },
+              },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'PythonCourse',
+      name: 'Python Course',
+      level: 'Begginers',
+      image_url: '../../assets/images/python.png',
+      courseDescription: 'The Python cours for beginners.',
+      sectiones: [
+        {
+          name: 'Introduction',
+          lessons: [
+            {
+              id: '1',
+              name: 'What is Python',
+              contant: {
+                'Python is awesome': {
+                  ques: 'what is python?',
+                  answers: [{ 'Python is awesome': true }],
+                },
+              },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'LinuxCourse',
+      name: 'Linux Course',
+      level: 'Begginers',
+      image_url: '../../assets/images/linux.jpg',
+      courseDescription: 'The Linux cours for beginners.',
+      sectiones: [
+        {
+          name: 'Introduction',
+          lessons: [
+            {
+              id: '2',
+              name: 'What is Linux',
+              contant: {
+                'Python is awesome': {
+                  ques: 'what is python?',
+                  answers: [{ 'Python is awesome': true }],
+                },
+              },
+            },
+          ],
+        },
+      ],
+    },
   ];
 
   constructor() {}
+
+
+  getCourses() {
+    return this.courses.slice();
+  }
 }

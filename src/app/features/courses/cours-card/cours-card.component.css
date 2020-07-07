@@ -11,12 +11,12 @@ img {
 
 
 .example-header-image {
-  background-image: url('../../../assets/images/hacker.jpg');
+  background-image: url('../../../../assets/images/hacker.jpg');
   background-size: cover;
 }
 
 .avatar {
-  background-image: url('../../../assets/images/hacker.jpg');
+  background-image: url('../../../../assets/images/hacker.jpg');
   background-size: cover;
   vertical-align: left;
   width: 50px;

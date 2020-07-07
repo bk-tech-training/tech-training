@@ -9,5 +9,10 @@
  - `npm i firebase-tools -g`
  - `npm add @angular/fire`
  - `npm i firebase`
+
+### Todo
+ * models for courses, section, cours, lesson, and user with user progress 
+ * form for sign up and sign in with email and pass
+ * cours card angular material
  
 

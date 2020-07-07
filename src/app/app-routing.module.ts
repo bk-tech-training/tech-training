@@ -15,6 +15,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/members/members.module').then((m) => m.MembersModule),
   },
+  { path: 'courses', loadChildren: () => import('./features/courses/courses.module').then(m => m.CoursesModule) },
 ];
 
 @NgModule({

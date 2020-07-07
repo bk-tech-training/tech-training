@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
   CanActivate,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
   UrlTree,
   CanLoad,
   Router,
@@ -11,15 +9,13 @@ import {
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { take, map, tap } from 'rxjs/operators';
-import { async } from '@angular/core/testing';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class MemberGuard implements CanActivate, CanLoad {
-
   constructor(private authService: AuthService, private router: Router) {}
-
 
   canActivate():
     | Observable<boolean | UrlTree>
@@ -36,12 +32,12 @@ export class MemberGuard implements CanActivate, CanLoad {
   private isLoggedIn(): Observable<boolean> {
     return this.authService.currentUser.pipe(
       take(1),
-      map(user => !!user),
-      tap( async (isUserLoggedIn: boolean) => {
-        if(!isUserLoggedIn) {
-          await this.router.navigate(['/'])
+      map((user) => !!user),
+      tap(async (isUserLoggedIn: boolean) => {
+        if (!isUserLoggedIn) {
+          await this.router.navigate(['/']);
         }
       })
-    )
+    );
   }
 }

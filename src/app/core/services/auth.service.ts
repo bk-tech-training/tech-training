@@ -6,7 +6,8 @@ import {
 } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import {switchMap} from 'rxjs/operators';
 import * as firebase from 'firebase';
 
 export interface User {
@@ -27,7 +28,17 @@ export class AuthService {
     private afAuth: AngularFireAuth,
     private afStore: AngularFirestore,
     private router: Router
-  ) {}
+  ) {
+    this.currentUser = this.afAuth.authState.pipe(
+      switchMap( user => {
+        if (user) {
+          return this.afStore.doc(`users/${user.uid}`).valueChanges();
+        } else {
+          return of(null);
+        }
+      })
+    );
+  }
 
   public async signnInWithGoogle(): Promise<void> {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -38,6 +49,9 @@ export class AuthService {
     );
 
     // need to be change⛔
+    // use
+    // Firebase Auth Custom Claims given via a
+    // firebase  function at the user authentication level
     const userData: User = {
       uid: credential.user.uid,
       display_name: credential.user.displayName,
@@ -46,10 +60,12 @@ export class AuthService {
       roles: { admin: true }, // ⛔⛔⛔
     };
 
-    return userRef.set(userData, {merge: true});
+    await this.router.navigate(['/members']);
+    return userRef.set(userData, { merge: true });
   }
 
   public async signout() {
     await this.afAuth.signOut();
+    await this.router.navigate(['/home']);
   }
 }

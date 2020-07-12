@@ -5,12 +5,9 @@ import { CoursesRoutingModule } from './courses-routing.module';
 import { CoursesComponent } from './courses.component';
 import { CoursCardComponent } from './cours-card/cours-card.component';
 
-
 @NgModule({
-  declarations: [CoursesComponent,CoursCardComponent],
-  imports: [
-    CommonModule,
-    CoursesRoutingModule
-  ]
+  declarations: [CoursesComponent, CoursCardComponent],
+  imports: [CommonModule, CoursesRoutingModule],
+  exports: [CoursesComponent]
 })
-export class CoursesModule { }
+export class CoursesModule {}

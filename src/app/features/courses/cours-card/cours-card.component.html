@@ -1,14 +1,20 @@
-
-
 <div class="card bg-dark text-white example-card">
   <div class="card-header">
     <div class="row">
       <div class="col-md-4">
         <!-- <div class="avatar"></div> -->
-        <img class="avatar" src="../../../../assets/images/hacker.jpg" alt="avatar">
+        <a
+          style="cursor: pointer;"
+          [routerLink]="[index]"
+          routerLinkActive="active"
+        >
+          <img
+            class="avatar"
+            src="../../../../assets/images/hacker.jpg"
+            alt="avatar"
+          />
+        </a>
       </div>
-
-
 
       <div class="col-md-8">
         <h4 class="card-title">{{ course.name }}</h4>
@@ -17,19 +23,15 @@
     </div>
   </div>
   <div class="card-body">
-    <a
-routerLink="course"
-routerLinkActive="active"
->
-    <img
-      class="img-responsive ml-0"
-      mat-card-image
-      [src]="course.image_url"
-      alt="Python symbol"
-    />
-
+    <a routerLink="course" routerLinkActive="active">
+      <img
+        class="img-responsive ml-0"
+        mat-card-image
+        [src]="course.image_url"
+        alt="Python symbol"
+      />
     </a>
     <p class="card-text">{{ course.courseDescription }}</p>
-    <button [routerLink]="[index]" class="btn btn-primary">Start Now</button>
+    <button (click)="toCourse()" class="btn btn-primary">Start Now</button>
   </div>
 </div>

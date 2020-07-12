@@ -12,6 +12,7 @@
 
 ### Todo
 * routing home (courses, articals) navigate ot course with the course id and to all courses (same for articals)
+* diractive for courses sor home
 * course landing page from card
 * lesson from course landing page
  * models for courses, section, cours, lesson, and user with user progress 

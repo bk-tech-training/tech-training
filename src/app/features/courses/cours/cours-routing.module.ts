@@ -5,9 +5,12 @@ import { CoursComponent } from './cours.component';
 import { CoursesComponent } from '../courses.component';
 
 const routes: Routes = [
-  { path: '', component: CoursComponent },
-  {path: 'course/:id', component: CoursesComponent},
+  { path: '', component: CoursComponent,
+children: [
   { path: ':id', component: CoursComponent },
+
+]},
+  // {path: 'course/:id', component: CoursesComponent},
 ];
 
 @NgModule({

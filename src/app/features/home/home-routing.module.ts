@@ -7,9 +7,14 @@ import { CoursesComponent } from '../courses/courses.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/courses',
+    redirectTo: 'courses',
     pathMatch: 'full',
-    children: [{ path: 'courses', component: CoursesComponent }],
+
+  },
+  {
+    path: 'course/:id',
+    loadChildren: () =>
+      import('../courses/cours/cours.module').then((m) => m.CoursModule),
   },
 ];
 

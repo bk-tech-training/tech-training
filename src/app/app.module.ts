@@ -9,9 +9,10 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 
 import { SharedModule } from './shared/shared.module';
 import { CoursCardComponent } from './features/courses/cours-card/cours-card.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent],
+  declarations: [AppComponent, NavbarComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

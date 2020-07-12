@@ -18,7 +18,7 @@
   </div>
   <div class="card-body">
     <a
-routerLink="/course"
+routerLink="course"
 routerLinkActive="active"
 >
     <img
@@ -30,6 +30,6 @@ routerLinkActive="active"
 
     </a>
     <p class="card-text">{{ course.courseDescription }}</p>
-    <button class="btn btn-primary">Start Now</button>
+    <button [routerLink]="[index]" class="btn btn-primary">Start Now</button>
   </div>
 </div>

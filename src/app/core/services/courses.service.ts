@@ -80,11 +80,11 @@ export class CoursesService {
       ],
     },
     {
-      id: 'PythonCourse',
-      name: 'Python Course',
+      id: 'NetworkingCourse',
+      name: 'Networking Course',
       level: 'Begginers',
-      image_url: '../../assets/images/python.png',
-      courseDescription: 'The Python cours for beginners.',
+      image_url: '../../assets/images/networking.jpg',
+      courseDescription: 'The Networking cours for beginners.',
       sectiones: [
         {
           name: 'Introduction',
@@ -104,10 +104,10 @@ export class CoursesService {
       ],
     },
     {
-      id: 'LinuxCourse',
-      name: 'Linux Course',
+      id: 'CsCourse',
+      name: 'Computer Science Course',
       level: 'Begginers',
-      image_url: '../../assets/images/linux.jpg',
+      image_url: '../../assets/images/matrix.jpg',
       courseDescription: 'The Linux cours for beginners.',
       sectiones: [
         {
@@ -182,5 +182,9 @@ export class CoursesService {
 
   getCourses() {
     return this.courses.slice();
+  }
+
+  getCourse(id: number) {
+    return this.courses[id];
   }
 }

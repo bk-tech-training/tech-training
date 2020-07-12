@@ -11,10 +11,15 @@
  - `npm i firebase`
 
 ### Todo
+* routing home (courses, articals) navigate ot course with the course id and to all courses (same for articals)
 * course landing page from card
 * lesson from course landing page
  * models for courses, section, cours, lesson, and user with user progress 
  * form for sign up and sign in with email and pass
  * cours card bootstrap
+
+
+ #### bild for ghp
+ `ng build --prod --base-href https://betzalelkenig.github.io/tech-training-1/`
  
 

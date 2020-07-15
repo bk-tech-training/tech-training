@@ -10,7 +10,7 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 })
 export class CoursComponent implements OnInit {
   course: Course;
-  id = 0;
+  id: number;
 
   constructor(
     private courseService: CoursesService,
@@ -19,16 +19,27 @@ export class CoursComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.route.params.subscribe((params: Params) => {
-    //   this.id = +params.id;
+    // this.route.paramMap.subscribe((params: Params) => {
+    //   this.id = +params.get('id');
+    //   console.log('paramsmap   ', params.get('id'), this.id);
+
     //   this.course = this.courseService.getCourse(this.id);
     // });
 
+    this.route.params.subscribe((params: Params) => {
+      this.id = +params.id;
+      console.log(params.id);
+
+      this.course = this.courseService.getCourse(this.id);
+    });
 
     // this.id = this.route.snapshot.params.id;
     // console.log(`id: ${this.id}`);
 
-    this.course = this.courseService.getCourse(this.id);
+    // this.id = +this.route.snapshot.paramMap.get('id');
+    // console.log('paramsmap   ', this.id);
+
+    // this.course = this.courseService.getCourse(this.id);
     // console.log(this.course);
   }
 

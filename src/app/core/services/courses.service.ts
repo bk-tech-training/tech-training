@@ -53,6 +53,21 @@ export class CoursesService {
             },
           ],
         },
+        {
+          name: 'Variabls',
+          lessons: [
+            {
+              id: '2',
+              name: 'Variabls and types',
+              contant: {
+                'Python is awesome': {
+                  ques: 'what is python?',
+                  answers: [{ 'Python is awesome': true }],
+                },
+              },
+            },
+          ],
+        },
       ],
     },
     {

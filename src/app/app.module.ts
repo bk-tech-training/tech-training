@@ -10,6 +10,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SharedModule } from './shared/shared.module';
 import { CoursCardComponent } from './features/courses/cours-card/cours-card.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CoursModule } from './features/courses/cours/cours.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, PageNotFoundComponent],
@@ -19,6 +20,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserAnimationsModule,
     CoreModule,
     SharedModule,
+    CoursModule,
   ],
   exports: [SharedModule],
   providers: [],

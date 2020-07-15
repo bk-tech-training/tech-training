@@ -1,12 +1,32 @@
-<hr>
-<h1 class="text-center">{{ this.course.name }}</h1>
-<p>course name</p>
-<hr>
-<button mdbBtn color="primary" class="waves-light" type="button" (click)="test.toggle()" mdbWavesEffect>
-  Toggle collapse
-</button>
+<hr >
 
-<div class="" mdbCollapse #test="bs-collapse">
-  <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-    keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+<div class="row">
+  <div class="col-xs-12">
+<h1 class="text-center">{{ this.course.name }}</h1>
+  </div></div>
+<div class="row">
+  <div class="col-xs-12">
+    <a
+      href="#"
+      class="list-group-item clearfix"
+      *ngFor="let section of this.course.sectiones"
+    >
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">
+          {{ section.name }}
+        </h4>
+        <p class="list-group-item-text">{{ section.name }}</p>
+      </div>
+      <span class="pull-right">
+        <img
+          [src]="this.course.image_url"
+          alt="{{ course.name }}"
+          class="img-responsive"
+          style="max-height: 50px;"
+        />
+      </span>
+    </a>
+    <!-- <app-recipe-item></app-recipe-item> -->
+  </div>
 </div>
+

@@ -1,0 +1,9 @@
+<div style=" display: flex; flex-wrap: wrap;">
+  <!-- Example row of columns -->
+
+    <bk-course-card *ngFor="let courseEl of courses; let i = index"
+    [course]="courseEl"
+    [index]="i"></bk-course-card>
+
+
+</div>

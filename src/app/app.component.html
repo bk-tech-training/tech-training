@@ -1,26 +1,23 @@
-
 <bk-navbar></bk-navbar>
 
-
-
 <main role="main">
-
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
       <h1 class="display-3">Wellcome!</h1>
       <p>This is a place for learn and train the lead tech subjects.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">For all courses &raquo;</a></p>
+      <p>
+        <a class="btn btn-primary btn-lg" routerLink="courses" role="button"
+          >For all courses &raquo;</a
+        >
+      </p>
     </div>
   </div>
-
-
-  <router-outlet></router-outlet>
+<div class="container">
+  <router-outlet ></router-outlet>
+</div>
 </main>
 
-
 <footer class="container">
-  <p>&copy; Betzelel-Kenig 2020</p>
+  <p class="text-center">&copy; Betzelel-Kenig 2020</p>
 </footer>
-
-
